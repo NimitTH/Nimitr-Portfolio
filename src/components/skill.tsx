@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
-import { SkillIconsBootstrap, SkillIconsCss, SkillIconsHtml, SkillIconsJavascript, SkillIconsMysqlLight, SkillIconsNextjsDark, SkillIconsNextjsLight, SkillIconsPhotoshop, SkillIconsPhpLight, SkillIconsPrisma, SkillIconsReactLight, SkillIconsTailwindcssLight, SkillIconsTypescript } from './icons/skills'
+import { SkillIconsBootstrap, SkillIconsCss, SkillIconsHtml, SkillIconsJavascript, SkillIconsMysqlLight, SkillIconsNextjsLight, SkillIconsPhotoshop, SkillIconsPhpLight, SkillIconsPrisma, SkillIconsReactLight, SkillIconsTailwindcssLight, SkillIconsTypescript } from './icons/skills'
 import { StreamlineUltimateRewardStars2Bold } from './icon'
 
 const skills = [

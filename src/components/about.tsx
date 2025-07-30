@@ -1,10 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Code, Link2, Palette, Zap } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { FluentPerson28Filled, WeuiMeFilled } from "./icon"
-import { ShinyButton } from "./magicui/shiny-button"
-import { RainbowButton } from "./magicui/rainbow-button"
+import { FluentPerson28Filled } from "./icon"
 
 export function About() {
     return (

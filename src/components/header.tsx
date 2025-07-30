@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
@@ -10,14 +10,14 @@ export function Header() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [activeSection, setActiveSection] = useState("#home")
 
-    const navItems = [
+    const navItems = useMemo(() => [
         { href: "#home", label: "บ้าน" },
         { href: "#about", label: "เกี่ยวกับ" },
         { href: "#experience", label: "ประสบการณ์" },
         { href: "#skills", label: "ทักษะ" },
         { href: "#projects", label: "ผลงาน" },
         { href: "#contact", label: "ติดต่อ" },
-    ]
+    ], [])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -46,7 +46,7 @@ export function Header() {
             window.removeEventListener("scroll", handleScroll)
             observer.disconnect()
         }
-    }, [])
+    }, [navItems])
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId)
@@ -56,9 +56,8 @@ export function Header() {
 
     return (
         <header
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-                isScrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
-            }`}
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
+                }`}
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-center h-16">
@@ -69,11 +68,10 @@ export function Header() {
                                 key={item.href}
                                 href={item.href}
                                 onClick={() => scrollToSection(item.href.slice(1))}
-                                className={`transition-colors duration-200 ${
-                                    activeSection === item.href
+                                className={`transition-colors duration-200 ${activeSection === item.href
                                         ? "text-red-500"
                                         : "text-muted-foreground"
-                                }`}
+                                    }`}
                             >
                                 {item.label}
                             </Link>
@@ -98,11 +96,10 @@ export function Header() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`block py-2 transition-colors duration-200 ${
-                                    activeSection === item.href
+                                className={`block py-2 transition-colors duration-200 ${activeSection === item.href
                                         ? "text-red-500"
                                         : "text-muted-foreground"
-                                }`}
+                                    }`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.label}

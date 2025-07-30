@@ -6,10 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Github } from "lucide-react"
 import { useState } from "react"
 import { Fa7SolidPhoneVolume } from "./icon"
-import Link from "next/link"
 import { Label } from "./ui/label"
 
 const contactInfo = [
@@ -65,6 +64,7 @@ export function Contact() {
             setSubmitStatus("success")
             setFormData({ name: "", email: "", subject: "", message: "" })
         } catch (error) {
+            console.error("Error sending message:", error)
             setSubmitStatus("error")
         } finally {
             setIsSubmitting(false)

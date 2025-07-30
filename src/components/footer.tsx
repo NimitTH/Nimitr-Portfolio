@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { Heart } from "lucide-react"
 import { IcBaselineEmail, MdiGithub } from "./icon"
 
 const quickLinks = [

@@ -1,11 +1,9 @@
-import { Button } from "@/components/ui/button"
-import { ArrowDown, ChevronRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { AuroraText } from "./magicui/aurora-text"
 import { IcBaselineEmail, MdiGithub, MdiResume, StreamlineUltimateRewardStars2Bold } from "./icon"
 import { RainbowButton } from "./magicui/rainbow-button"
-import { TextAnimate } from "./magicui/text-animate"
 
 export function Hero() {
     return (

@@ -1,4 +1,4 @@
-import { FamiconsCalendarOutline, TokenBrandedSource } from '@/components/icon';
+import { TokenBrandedSource } from '@/components/icon';
 import React from 'react';
 
 import {

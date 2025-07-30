@@ -4,18 +4,14 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 import { RainbowButton } from "./magicui/rainbow-button"
-import { FluentCertificate32Filled, FluentCertificate32Regular, IconParkSolidWebPage, StreamlinePlumpAiTechnologySparkSolid, StreamlineUltimateRewardStars2Bold } from "./icon"
+import { FluentCertificate32Regular, IconParkSolidWebPage, StreamlinePlumpAiTechnologySparkSolid, StreamlineUltimateRewardStars2Bold } from "./icon"
 import Link from "next/link"
-import { ShineBorder } from "./magicui/shine-border"
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
-import { AuroraText } from "./magicui/aurora-text"
 
 const projects = [
     {
