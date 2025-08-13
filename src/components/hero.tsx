@@ -1,9 +1,10 @@
-import { ArrowDown } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+
 import { AuroraText } from "./magicui/aurora-text"
-import { IcBaselineEmail, MdiGithub, MdiResume, StreamlineUltimateRewardStars2Bold } from "./icon"
 import { RainbowButton } from "./magicui/rainbow-button"
+import { ArrowDown } from "lucide-react"
+import { IcBaselineEmail, MdiGithub, MdiResume, StreamlineUltimateRewardStars2Bold } from "./icon"
 
 export function Hero() {
     return (
@@ -54,9 +55,9 @@ export function Hero() {
                     </div>
 
                     <div className="flex justify-center order-1 lg:order-2">
-                        <div className="w-96 h-96 flex justify-center rounded-md overflow-hidden shadow-lg/50 shadow-primary/40 hover:shadow-lg hover:shadow-primary/40 transition-all hover:scale-105 duration-300">
+                        <div className="w-96 h-96 flex justify-center rounded-full overflow-hidden shadow-lg/50 shadow-primary/40 hover:shadow-lg hover:shadow-primary/40 transition-all hover:scale-105 duration-300">
                             <Image
-                                src="/images/IMG_20250530_204745_369.jpg"
+                                src="/images/LINE_ALBUM_8868_250811_1.jpg"
                                 alt="Nimit Suwannasri"
                                 className="object-cover"
                                 width={500}

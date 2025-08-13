@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
 import { RainbowButton } from "./magicui/rainbow-button"
-import { FluentCertificate32Regular, IconParkSolidWebPage, StreamlinePlumpAiTechnologySparkSolid, StreamlineUltimateRewardStars2Bold } from "./icon"
+import { FluentCertificate32Regular, IconParkSolidWebPage, StreamlineUltimateRewardStars2Bold } from "./icon"
 import Link from "next/link"
 import {
     Dialog,
@@ -31,10 +31,9 @@ const certificates = [
 
 export function Projects() {
     return (
-        <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-muted/20">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <StreamlinePlumpAiTechnologySparkSolid className='mb-3.5 w-13 h-13 mx-auto text-yellow-300 drop-shadow-xl/50 drop-shadow-amber-400/65' />
                     <h1 className="text-3xl sm:text-4xl font-bold mb-6">ผลงานโปรเจกต์ของฉัน</h1>
                     <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                         ส่วนนี้ก็จะเป็นโปรเจกต์ที่ผมได้ทำมาในช่วงเวลาที่ผ่านมา ซึ่งจะมีทั้งโปรเจกต์ที่เป็นโปรเจกต์จบการศึกษา และโปรเจกต์ที่ผมได้ทำเพื่อฝึกฝนทักษะต่างๆ ของผม

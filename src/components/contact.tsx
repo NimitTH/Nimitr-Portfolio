@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send, Github } from "lucide-react"
 import { useState } from "react"
-import { Fa7SolidPhoneVolume } from "./icon"
 import { Label } from "./ui/label"
 
 const contactInfo = [
@@ -58,7 +57,6 @@ export function Contact() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // Simulate form submission
         try {
             await new Promise((resolve) => setTimeout(resolve, 1000))
             setSubmitStatus("success")
@@ -72,10 +70,9 @@ export function Contact() {
     }
 
     return (
-        <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/10">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-16">
-                    <Fa7SolidPhoneVolume className="mb-3.5 w-13 h-13 mx-auto text-emerald-400 drop-shadow-lg/50 drop-shadow-teal-400/90" />
                     <h1 className="text-3xl sm:text-4xl font-bold mb-6">ช่องทางติดต่อฉัน</h1>
                     <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                         สามารถติดต่อผมได้ผ่านทางอีเมล หรือโทรศัพท์ตามข้อมูลด้านล่างนี้ หรือถ้าต้องการให้ผมช่วยอะไร
@@ -84,9 +81,6 @@ export function Contact() {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12">
-
-
-                    {/* Contact Form */}
                     <Card>
                         <CardHeader>
                             <CardTitle className="text-2xl">ส่งข้อความถึงฉัน</CardTitle>
@@ -173,7 +167,7 @@ export function Contact() {
                             </form>
                         </CardContent>
                     </Card>
-                    {/* Contact Information */}
+
                     <div className="space-y-8">
                         <Card>
                             <CardHeader>
@@ -183,20 +177,20 @@ export function Contact() {
                                 <div className="space-y-6">
                                     {contactInfo.map((info, index) => (
                                         <div key={index} className="flex items-center space-x-4">
-                                            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                                                <info.icon className="w-6 h-6 text-blue-600" />
+                                            <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                                                <info.icon className="w-6 h-6 text-accent-foreground" />
                                             </div>
                                             <div>
-                                                <h3 className="font-semibold text-gray-900">{info.title}</h3>
+                                                <h3 className="font-semibold ">{info.title}</h3>
                                                 {info.href !== "#" ? (
                                                     <a
                                                         href={info.href}
-                                                        className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                                                        className="text-muted-foreground hover:text-blue-600 transition-colors duration-200"
                                                     >
                                                         {info.value}
                                                     </a>
                                                 ) : (
-                                                    <p className="text-gray-600">{info.value}</p>
+                                                    <p className="text-muted-foreground">{info.value}</p>
                                                 )}
                                             </div>
                                         </div>

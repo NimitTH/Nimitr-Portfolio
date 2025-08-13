@@ -1,13 +1,75 @@
 import Image from "next/image"
 import Link from "next/link"
-import { FluentPerson28Filled } from "./icon"
+import { ArcTimeline, ArcTimelineItem } from "@/components/magicui/arc-timeline";
+import { GraduationCap, Sparkles } from "lucide-react";
+
+const TIMELINE: ArcTimelineItem[] = [
+    {
+        time: "2553",
+        steps: [
+            {
+                icon: <Sparkles width={20} height={20} />,
+                content:
+                    "อนุบาล 1 ที่ ศูนย์พัฒนาเด็กเล็ก ที่วัดร่องกู่",
+            },
+        ],
+    },
+    {
+        time: "2554",
+        steps: [
+            {
+                icon: <Sparkles width={20} height={20} />,
+                content: "ย้ายมาต่ออนุบาล 2 ที่ โรงเรียนป่างิ้ววิทยา",
+            },
+        ],
+    },
+    {
+        time: "2556",
+        steps: [
+            {
+                icon: <Sparkles width={20} height={20} />,
+                content:
+                    "ต่อ ประถมศึกษาปีที่ 1 ที่โรงเรียนป่างิ้ว โรงเรียนเดิม",
+            },
+        ],
+    },
+    {
+        time: "2562",
+        steps: [
+            {
+                icon: <Sparkles width={20} height={20} />,
+                content:
+                    "ต่อ มัธยมศึกษาปีที่ 1 ที่โรงเรียนป่างิ้ว โรงเรียนเดิม",
+            },
+        ],
+    },
+    {
+        time: "2565",
+        steps: [
+            {
+                icon: <Sparkles width={20} height={20} />,
+                content:
+                    "มาต่อสายอาชีวะ ที่วิทยาลัยเทคนิคเวียงป่าเป้าในระดับชั้น ปวช. 1",
+            },
+        ],
+    },
+    {
+        time: "2568",
+        steps: [
+            {
+                icon: <Sparkles width={20} height={20} />,
+                content:
+                    "เรียนต่อที่วิทยาลัยเทคนิคเวียงป่าเป้า ในระดับชั้น ปวส. 1",
+            },
+        ],
+    },
+];
 
 export function About() {
     return (
-        <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-            <div className="max-w-7xl mx-auto ">
+        <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-muted/20">
+            <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <FluentPerson28Filled className='mb-3.5 w-14 h-14 mx-auto text-blue-400 drop-shadow-lg drop-shadow-sky-300' />
                     <h1 className="text-3xl sm:text-4xl font-bold mb-6">เกี่ยวกับฉัน</h1>
                     <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                         ในส่วนนี้ผมจะนำเสนอประสบการณ์ในการพัฒนาเว็บไซต์โดยย่อ ซึ่งผมฝึกเขียนเว็บประมาณจะสองปีได้แล้วครับ ซึ่งผมก็พยายามพัฒนาตัวเองอยู่เรื่อยๆ ครับ
@@ -15,14 +77,21 @@ export function About() {
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div className="mx-auto w-96 h-96 rounded-md overflow-hidden shadow-lg/50 shadow-primary/40 hover:shadow-lg hover:shadow-primary/60 transition-all hover:scale-105 duration-300">
-                        <Image
-                            height={500}
-                            width={500}
-                            src="/images/IMG_20250330_195745_036.jpg"
-                            alt="Nimit Suwansri"
-                            className="object-cover"
-                        />
+                    <div className="flex flex-col gap-6">
+                        <div className=" w-96 h-96 rounded-md overflow-hidden shadow-lg/50 shadow-primary/40 hover:shadow-lg hover:shadow-primary/60 transition-all hover:scale-105 duration-300">
+                            <Image
+                                height={500}
+                                width={500}
+                                src="/images/IMG_20250530_204745_369.jpg"
+                                alt="Nimit Suwansri"
+                                className="object-cover"
+                            />
+
+                        </div>
+                        {/* <div className="flex items-center gap-2">
+                            <p className="text-2xl font-bold">ชื่อ</p>
+                            <p className="text-2xl font-medium">นิมิตร</p>
+                        </div> */}
                     </div>
 
                     <div>
@@ -44,33 +113,26 @@ export function About() {
                             </Link>
                             {" "}ซึ่งผมได้ที่สองครับ แต่ PHP ผมคิดว่าผมอาจจะฝึกไม่เยอะเท่า JavaScript ครับผม
                         </p>
-                        <p className="text-lg text-muted-foreground mb-6">
-                            ถ้าพูดถึงจุดเด่นของผมคือ ผมเป็นคนขยัน และมีความรับผิดชอบสูงครับผมจะพยายามทำงานให้
-                            เสร็จตามกำหนดเวลา และพยายามทำให้ดีที่สุดครับ หรือหมกมุ่นกับสิ่งที่ทำอยู่ครับ
-                            และผมก็เป็นคนที่ชอบเรียนรู้สิ่งใหม่ๆ อยู่เสมอครับ จุดที่ต้องปรับปรุงของผมคือ
-                            ผมเป็นคนที่ไม่ค่อยกล้าแสดงออก และเป็นคน {" "}
-                            <Link
-                                href="https://www.google.com/search?q=perfectionist+%E0%B8%84%E0%B8%B7%E0%B8%AD&rlz=1C1VDKB_thTH1161TH1161&oq=perfectionist+%E0%B8%84%E0%B8%B7%E0%B8%AD&gs_lcrp=EgZjaHJvbWUyDggAEEUYJxg5GIAEGIoFMgcIARAAGIAEMggIAhAAGBYYHjIICAMQABgWGB4yCAgEEAAYFhgeMggIBRAAGBYYHjIICAYQABgWGB4yCAgHEAAYFhgeMgoICBAAGIAEGKIE0gELNTI0MjEzajBqMTWoAgiwAgHxBUqeH-7X-YSV8QVKnh_u1_mElQ&sourceid=chrome&ie=UTF-8"
-                                target="_blank" rel="noopener noreferrer"
-                                className=" text-yellow-700/65 hover:underline hover:text-amber-500 transition-colors duration-200 hover:font-medium"
-                            >
-                                Perfectionist
-                            </Link>
-                            {" "}ด้วยครับ ผมเลยพยายามปรับปรุงตัวเองอยู่เรื่อยๆ ครับ
-                        </p>
                     </div>
 
 
                 </div>
 
-                {/* <div className="flex justify-center">
-                    <Link href="/mytimeline" className="flex items-center gap-2">
+                <div>
+                    <h2 className="text-2xl flex items-center gap-2 justify-center font-semibold "><GraduationCap />ระดับการศึกษา</h2>
 
-                        <RainbowButton className="transition-transform hover:scale-105 duration-300">ประวัติอย่างละเอียด</RainbowButton>
+                    <ArcTimeline
+                        data={TIMELINE}
+                        defaultActiveStep={{ time: "2025 Q2", stepIndex: 0 }}
+                        arcConfig={{
+                            circleWidth: 4500,
+                            angleBetweenMinorSteps: 0.4,
+                            lineCountFillBetweenSteps: 8,
+                            boundaryPlaceholderLinesCount: 50,
+                        }}
+                    />
+                </div>
 
-                    </Link>
-
-                </div> */}
             </div>
         </section>
     )

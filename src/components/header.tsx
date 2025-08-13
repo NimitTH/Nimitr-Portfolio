@@ -4,6 +4,8 @@ import { useState, useEffect, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
+import { ScrollProgress } from "./magicui/scroll-progress"
+import { AnimatedThemeToggler } from "./magicui/animated-theme-toggler"
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,7 +13,7 @@ export function Header() {
     const [activeSection, setActiveSection] = useState("#home")
 
     const navItems = useMemo(() => [
-        { href: "#home", label: "บ้าน" },
+        { href: "#home", label: "หน้าแรก" },
         { href: "#about", label: "เกี่ยวกับ" },
         { href: "#experience", label: "ประสบการณ์" },
         { href: "#skills", label: "ทักษะ" },
@@ -21,7 +23,7 @@ export function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
+            setIsScrolled(window.scrollY > 20)
         }
         window.addEventListener("scroll", handleScroll)
 
@@ -56,12 +58,16 @@ export function Header() {
 
     return (
         <header
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md border-b" : "bg-transparent"
-                }`}
+            className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md " : "bg-transparent"}`}
         >
+            <ScrollProgress className="top-[64px]" />
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-center h-16">
-                    {/* Desktop Navigation */}
+                <div className="flex items-center justify-between h-16">
+                    <div className="text-2xl font-bold flex items-center gap-2">
+                        Nimit&apos;s Portfolio
+                        <AnimatedThemeToggler />
+                    </div>
+
                     <nav className="hidden md:flex space-x-8">
                         {navItems.map((item) => (
                             <Link
@@ -69,8 +75,8 @@ export function Header() {
                                 href={item.href}
                                 onClick={() => scrollToSection(item.href.slice(1))}
                                 className={`transition-colors duration-200 ${activeSection === item.href
-                                        ? "text-red-500"
-                                        : "text-muted-foreground"
+                                    ? "text-red-500"
+                                    : "text-muted-foreground"
                                     }`}
                             >
                                 {item.label}
@@ -97,8 +103,8 @@ export function Header() {
                                 key={item.href}
                                 href={item.href}
                                 className={`block py-2 transition-colors duration-200 ${activeSection === item.href
-                                        ? "text-red-500"
-                                        : "text-muted-foreground"
+                                    ? "text-red-500"
+                                    : "text-muted-foreground"
                                     }`}
                                 onClick={() => setIsMenuOpen(false)}
                             >

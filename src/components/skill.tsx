@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, CardContent } from "@/components/ui/card"
 import { SkillIconsBootstrap, SkillIconsCss, SkillIconsHtml, SkillIconsJavascript, SkillIconsMysqlLight, SkillIconsNextjsLight, SkillIconsPhotoshop, SkillIconsPhpLight, SkillIconsPrisma, SkillIconsReactLight, SkillIconsTailwindcssLight, SkillIconsTypescript } from './icons/skills'
-import { StreamlineUltimateRewardStars2Bold } from './icon'
 
 const skills = [
     {
@@ -59,12 +58,12 @@ export function Skill() {
         <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <StreamlineUltimateRewardStars2Bold className='mb-3.5 w-14 h-14 mx-auto text-pink-500 drop-shadow-lg/75 drop-shadow-pink-400' />
                     <h2 className="text-3xl sm:text-4xl font-bold mb-6">ทักษะ & เทคโนโลยี</h2>
                     <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                         ต่อไปนี้คือเทคโนโลยีและเครื่องมือบางส่วนที่ฉันใช้เพื่อนำความคิดมาสู่ชีวิต
                     </p>
                 </div>
+
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                     {skills.map((skill, index) => (
                         <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 p-0">
