@@ -57,7 +57,7 @@ interface ArcTimelineProps extends ComponentPropsWithoutRef<"div"> {
 export function ArcTimeline(props: ArcTimelineProps) {
   const {
     className,
-    children,
+    // children,
     data,
     arcConfig = {},
     defaultActiveStep = {},
